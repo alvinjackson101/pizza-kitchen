@@ -6,48 +6,48 @@
     <title>South Park Pizza</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
-    <script type="text/javascript">
-		function hostess() {
-			let container = document.getElementById('container');
-			let item = document.getElementById('item');
-			console.log('item current top ' + item.style.top);
-			let cWidth = getComputedStyle(container).width.replace('px','');
-			let iWidth = getComputedStyle(item).width.replace('px','');
-
-			let pos = 0;
-			let stop = cWidth - iWidth;
-			let iId = setInterval(frame, 10);
-
-			console.log(cWidth);
-			console.log(iWidth);
-			console.log(`pos: ${pos} stop: ${stop}`);
-
-			function frame() {
-				if (pos == stop) {
-			      clearInterval(iId);
-			    } else {
-			      pos++; 
-			      item.style.top = pos + 'px'; 
-			      item.style.left = pos + 'px'; 
-			    }
-			}
-		}
-	</script>
 </head>
 
 
 <body>
-
-   <img src ="main-logo.png"/>
-   <img src ="hostess-greet.png" id="hostess-greet"/> 
-   <input type="button" onclick="getGreet()" class="button" value="Order Leftover Pizza Now!"/>
-
+    
+		<div class="bg"></div>
+	
+		<div class="center" >
+			
+			<div><img src ="hostess-greet.png" id="hostess-greet" class="paused"/></div>
+			<div><input type="button" onclick="getGreet()" class="button" value="Order Leftover Pizza Now!"/></div>
+			<div><img src="chef1.png" id="chef" /></div>
+			<div><img src="fridge.png" id="fridge" /></div>
+		</div>
+		
 </body>
+<script type="text/javascript">
+	function hostess() {
+		let container = document.getElementById('container');
+		let item = document.getElementById('item');
+		console.log('item current top ' + item.style.top);
+		let cWidth = getComputedStyle(container).width.replace('px','');
+		let iWidth = getComputedStyle(item).width.replace('px','');
 
-<script>
+		let pos = 0;
+		let stop = cWidth - iWidth;
+		let iId = setInterval(frame, 10);
 
+		console.log(cWidth);
+		console.log(iWidth);
+		console.log(`pos: ${pos} stop: ${stop}`);
 
-
+		function frame() {
+			if (pos == stop) {
+			  clearInterval(iId);
+			} else {
+			  pos++; 
+			  item.style.top = pos + 'px'; 
+			  item.style.left = pos + 'px'; 
+			}
+		}
+	}
 </script>
 
 </html>
