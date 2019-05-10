@@ -14,21 +14,25 @@
 		<div class="bg"></div>
 	
 		<div class="center" >
-			<h1>Hello</h1>
-			<div><img src ="hostess-greet.png" id="hostess-greet" class="paused"/></div>
-			<div><input type="button" onclick="getGreet()" class="button" value="Order Leftover Pizza Now!"/></div>
+			<div><img src ="hostess-greet.png" id="hostess-greet"/></div>
+			<div><input type="button" onclick="hostess()" class="button" value="Order Leftover Pizza Now!"/></div>
 			<div><img src="chef1.png" id="chef" /></div>
 			<div><img src="fridge.png" id="fridge" /></div>
 		</div>
 		
 </body>
 <script type="text/javascript">
+
 	function hostess() {
 		let container = document.getElementById('container');
 		let item = document.getElementById('item');
-		console.log('item current top ' + item.style.top);
-		let cWidth = getComputedStyle(container).width.replace('px','');
-		let iWidth = getComputedStyle(item).width.replace('px','');
+		// console.log('item current top ' + item.style.top);
+		// let cWidth = getComputedStyle(container).width.replace('px','');
+		// let iWidth = getComputedStyle(item).width.replace('px','');
+		let hostess = document.getElementById("hostess-greet");
+		hostess.src = "hostees-walking-to-fridge.png";
+		hostess.setAttribute("class", "hostess-greet");
+		
 
 		let pos = 0;
 		let stop = cWidth - iWidth;
@@ -49,5 +53,7 @@
 		}
 	}
 </script>
+
+
 
 </html>
